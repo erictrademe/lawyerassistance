@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" }
+    { "source": "/api/(.*)", "destination": "https://lawyer-assistance-api.onrender.com/api/$1" },
+    { "source": "/uploads/(.*)", "destination": "https://lawyer-assistance-api.onrender.com/uploads/$1" }
   ]
 }
