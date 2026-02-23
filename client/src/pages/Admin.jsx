@@ -48,7 +48,7 @@ export default function Admin() {
   const navigate = useNavigate()
 
   const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || '/api',
+    baseURL: (import.meta.env.VITE_API_URL || '') + '/api',
     headers: { 'x-user-id': user?._id }
   })
 
