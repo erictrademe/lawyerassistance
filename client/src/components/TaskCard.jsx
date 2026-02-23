@@ -20,7 +20,7 @@ export default function TaskCard({ card, onStatusChange, onDelete, onDragStart, 
   const [showInput, setShowInput] = useState(false)
   const inputRef = useRef(null)
   const { user } = useAuth()
-  const isOwner = user?._id === card.creatorId
+  const isOwner = user?._id === card.creatorId || user?.role === 'admin'
 
   useEffect(() => {
     if (showInput && inputRef.current) {
