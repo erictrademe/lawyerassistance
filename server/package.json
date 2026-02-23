@@ -1,0 +1,18 @@
+{
+  "name": "lawyer-task-server",
+  "version": "1.0.0",
+  "description": "律师任务管理系统后端API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "md5": "^2.3.0",
+    "mongoose": "^8.0.3",
+    "multer": "^2.0.2"
+  }
+}
