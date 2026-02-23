@@ -20,7 +20,11 @@ const USER_AVATARS = [
   { id: '9', emoji: '🐸', name: '青蛙' },
   { id: '10', emoji: '🦄', name: '独角兽' },
   { id: '11', emoji: '🐯', name: '老虎' },
-  { id: '12', emoji: '🐙', name: '章鱼' }
+  { id: '12', emoji: '🐙', name: '章鱼' },
+  // Default avatar images
+  { id: 'img1', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fa83b2c2b4773490d215d55355ea8396029a980fcb8669b4668fcd4f6cad4f806..jpeg', name: '头像1' },
+  { id: 'img2', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2F8f1193c7ebde549bd795ba014ea3c963da09d1a6ee150c9799d7335e1cbc4c2d..jpeg', name: '头像2' },
+  { id: 'img3', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fa3cc9a45285b860db48c0b17cd407b6231cd6f72f7e0a6b247ef7e2fc71d16b6..jpeg', name: '头像3' }
 ]
 
 export default function Admin() {
@@ -457,16 +461,29 @@ export default function Admin() {
                 <span className="text-sm text-gray-600">头像:</span>
                 <div className="flex gap-1 flex-wrap">
                   {USER_AVATARS.map(avatar => (
-                    <button
-                      key={avatar.id}
-                      type="button"
-                      onClick={() => setNewUserAvatar(avatar.emoji)}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform ${
-                        newUserAvatar === avatar.emoji ? 'ring-2 ring-offset-2 ring-primary scale-110 bg-gray-100' : 'hover:scale-110'
-                      }`}
-                    >
-                      {avatar.emoji}
-                    </button>
+                    avatar.url ? (
+                      <button
+                        key={avatar.id}
+                        type="button"
+                        onClick={() => setNewUserAvatar(avatar.url)}
+                        className={`w-10 h-10 rounded-full overflow-hidden transition-transform ${
+                          newUserAvatar === avatar.url ? 'ring-2 ring-offset-2 ring-primary scale-110' : 'hover:scale-110'
+                        }`}
+                      >
+                        <img src={avatar.url} alt={avatar.name} className="w-full h-full object-cover" />
+                      </button>
+                    ) : (
+                      <button
+                        key={avatar.id}
+                        type="button"
+                        onClick={() => setNewUserAvatar(avatar.emoji)}
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform ${
+                          newUserAvatar === avatar.emoji ? 'ring-2 ring-offset-2 ring-primary scale-110 bg-gray-100' : 'hover:scale-110'
+                        }`}
+                      >
+                        {avatar.emoji}
+                      </button>
+                    )
                   ))}
                   <input
                     type="file"
@@ -562,16 +579,29 @@ export default function Admin() {
                             {editUserData.username.charAt(0)}
                           </button>
                           {USER_AVATARS.map(avatar => (
-                            <button
-                              key={avatar.id}
-                              type="button"
-                              onClick={() => setEditUserData({ ...editUserData, avatar: avatar.emoji })}
-                              className={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform ${
-                                editUserData.avatar === avatar.emoji ? 'ring-2 ring-offset-2 ring-primary scale-110 bg-gray-100' : 'hover:scale-110'
-                              }`}
-                            >
-                              {avatar.emoji}
-                            </button>
+                            avatar.url ? (
+                              <button
+                                key={avatar.id}
+                                type="button"
+                                onClick={() => setEditUserData({ ...editUserData, avatar: avatar.url })}
+                                className={`w-10 h-10 rounded-full overflow-hidden transition-transform ${
+                                  editUserData.avatar === avatar.url ? 'ring-2 ring-offset-2 ring-primary scale-110' : 'hover:scale-110'
+                                }`}
+                              >
+                                <img src={avatar.url} alt={avatar.name} className="w-full h-full object-cover" />
+                              </button>
+                            ) : (
+                              <button
+                                key={avatar.id}
+                                type="button"
+                                onClick={() => setEditUserData({ ...editUserData, avatar: avatar.emoji })}
+                                className={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition-transform ${
+                                  editUserData.avatar === avatar.emoji ? 'ring-2 ring-offset-2 ring-primary scale-110 bg-gray-100' : 'hover:scale-110'
+                                }`}
+                              >
+                                {avatar.emoji}
+                              </button>
+                            )
                           ))}
                           <input
                             type="file"
