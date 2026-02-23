@@ -291,7 +291,12 @@ app.delete('/api/cards/:id', authMiddleware, async (req, res) => {
       return res.status(404).json({ error: 'Card not found' });
     }
 
-    if (card.creatorId.toString() !== req.userId) {
+    // Check if user is admin or the creator
+    const user = await User.findById(req.userId);
+    const isAdmin = user && user.role === 'admin';
+    const isCreator = card.creatorId.toString() === req.userId;
+
+    if (!isAdmin && !isCreator) {
       return res.status(403).json({ error: '只能删除自己创建的卡片' });
     }
 
