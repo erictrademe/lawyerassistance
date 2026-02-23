@@ -24,7 +24,9 @@ const USER_AVATARS = [
   // Default avatar images
   { id: 'img1', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fa83b2c2b4773490d215d55355ea8396029a980fcb8669b4668fcd4f6cad4f806..jpeg', name: '头像1' },
   { id: 'img2', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2F8f1193c7ebde549bd795ba014ea3c963da09d1a6ee150c9799d7335e1cbc4c2d..jpeg', name: '头像2' },
-  { id: 'img3', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fa3cc9a45285b860db48c0b17cd407b6231cd6f72f7e0a6b247ef7e2fc71d16b6..jpeg', name: '头像3' }
+  { id: 'img3', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fa3cc9a45285b860db48c0b17cd407b6231cd6f72f7e0a6b247ef7e2fc71d16b6..jpeg', name: '头像3' },
+  { id: 'img4', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Fec6b3c2b4773490d215d55355ea8396029a980fcb8669b4668fcd4f6cad4f807..jpeg', name: '头像4' },
+  { id: 'img5', url: 'https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-02-23%2FMiniMax-M2.1%2F2025189961615020997%2Ffd7c4d3e5885490e296cb14ccb03c974ea10d1a7ee250c9890e8446f2cdd5c4f..jpeg', name: '头像5' }
 ]
 
 export default function Admin() {
